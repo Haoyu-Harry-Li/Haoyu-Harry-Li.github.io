@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://haoyu-harry-li.github.io/sitemap.xml
+Sitemap: https://Haoyu-Harry-Li.github.io/sitemap.xml
