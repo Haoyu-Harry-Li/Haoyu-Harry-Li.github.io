@@ -26,6 +26,6 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
-Hi! I am currently a research assistant at [Dexlab](https://robotdexteritylab.com/), advised by [Prof. Xianyi Cheng](https://xianyicheng.github.io/). Prior to this, I earned my M.S from University of Pittsburgh. I was fortunate to work with [Prof. Longfei Shangguan](https://shanggdlk.github.io/) and [Dr. Jingao Xu](https://www.cs.cmu.edu/~jingaox/).
-
-My research aims to develop robotic systems that achieve human-like intuition and understanding in complex, unstructured environments with robustness, efficiency, and scalability.
+- Hi! I am currently a research assistant at [Dexlab](https://robotdexteritylab.com/), advised by [Prof. Xianyi Cheng](https://xianyicheng.github.io/). Prior to this, I earned my M.S from University of Pittsburgh. I was fortunate to work with [Prof. Longfei Shangguan](https://shanggdlk.github.io/) and [Dr. Jingao Xu](https://www.cs.cmu.edu/~jingaox/).
+- 
+- My research aims to develop robotic systems that achieve human-like intuition and understanding in complex, unstructured environments with robustness, efficiency, and scalability.
