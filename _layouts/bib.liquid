@@ -32,35 +32,44 @@
         {%- comment -%} 如果是 MP4 视频 {%- endcomment -%}
         {% if ext == '.mp4' %}
           {% assign video_src = entry.preview | prepend: '/assets/publication_preview/' %}
-          <video
-            class="preview z-depth-1 rounded"
-            autoplay muted loop playsinline
-            style="width:100%; height:auto;"
-          >
-            <source src="{{ video_src }}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <div style="width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+            <video
+              class="preview z-depth-1 rounded"
+              autoplay
+              muted
+              loop
+              playsinline
+              style="width:100%; height:100%; object-fit:cover; display:block;"
+            >
+              <source src="{{ video_src }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
 
         {%- comment -%} 如果是 PDF，用 embed 显示 {%- endcomment -%}
         {% elsif ext == '.pdf' %}
           {% assign pdf_src = entry.preview | prepend: '/assets/publication_preview/' %}
-          <embed
-            class="preview z-depth-1 rounded"
-            src="{{ pdf_src }}"
-            type="application/pdf"
-            style="width:100%; height:auto; display:block;"
-          />
+          <div style="width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+            <embed
+              class="preview z-depth-1 rounded"
+              src="{{ pdf_src }}"
+              type="application/pdf"
+              style="width:100%; height:100%; display:block;"
+            />
+          </div>
 
         {%- comment -%} 否则当成图片处理（如 .png, .jpg 等） {%- endcomment -%}
         {% else %}
           {% assign image_src = entry.preview | prepend: '/assets/publication_preview/' %}
-          <img
-            class="preview z-depth-1 rounded"
-            src="{{ image_src }}"
-            alt="{{ entry.preview }}"
-            loading="eager"
-            style="width:100%; height:auto; display:block;"
-          />
+          <div style="width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+            <img
+              class="preview z-depth-1 rounded"
+              src="{{ image_src }}"
+              alt="{{ entry.preview }}"
+              loading="eager"
+              style="width:100%; height:100%; object-fit:cover; display:block;"
+            />
+          </div>
         {% endif %}
       {% endif %}
 
@@ -309,7 +318,7 @@
               {% elsif entry.arxiv %}
                 data-arxiv-id="{{ entry.arxiv }}"
               {% elsif entry.eprint %}
-                data-arxiv-id="{{ entry.eprint }}
+                data-arxiv-id="{{ entry.eprint }}"
               {% elsif entry.doi %}
                 data-doi="{{ entry.doi }}"
               {% elsif entry.pmid %}
