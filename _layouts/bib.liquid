@@ -200,9 +200,7 @@
     {% endif -%}
     {% assign additional_info = entry.additional_info | default: "" | strip %}
     {% if additional_info != "" %}
-      {% capture additional_info_html %}
-        {{ additional_info | markdownify | strip | remove: '<p>' | remove: '</p>' }}
-      {% endcapture %}
+      {% assign additional_info_html = additional_info | markdownify | remove: '<p>' | remove: '</p>' | strip %}
     {% endif %}
     {% capture hook_exists %}{% file_exists _includes/hook/bib.liquid %}{% endcapture %}
     {% if hook_exists == 'true' %}
@@ -213,6 +211,11 @@
     <div class="periodical">
       {{ periodical | strip }}
     </div>
+    {% if additional_info != "" %}
+      <div class="additional-info">
+        {{ additional_info_html }}
+      </div>
+    {% endif %}
     <div class="periodical">
       {{ entry.note | strip }}
     </div>
